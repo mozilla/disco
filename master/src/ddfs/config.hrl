@@ -71,7 +71,7 @@
 -define(DELAYED_FLUSH_INTERVAL, (1 * ?SECOND)).
 
 % How long to wait between garbage collection runs.
--define(GC_INTERVAL, ?DAY).
+-define(GC_INTERVAL, 4 * ?HOUR).
 
 % Max duration for a GC run.  This should be smaller than
 % min(ORPHANED_{BLOB,TAG}_EXPIRES).
@@ -127,10 +127,10 @@
 % When orphaned blob can be deleted.  This should be large enough that
 % you can upload all the new blobs of a tag and perform the tag update
 % within this time.
--define(ORPHANED_BLOB_EXPIRES, (5 * ?DAY)).
+-define(ORPHANED_BLOB_EXPIRES, (2 * ?HOUR)).
 
 % When orphaned tag can be deleted.
--define(ORPHANED_TAG_EXPIRES, (5 * ?DAY)).
+-define(ORPHANED_TAG_EXPIRES, (2 * ?HOUR)).
 
 % How long a tag has to stay on the deleted list before
 % we can permanently forget it, after all known instances
